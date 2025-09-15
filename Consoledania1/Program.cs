@@ -15,6 +15,7 @@ namespace basis_prog1
             string[] tegn = { "1", "2", "3", "4", "5", "e", };
             float totalPoint = 10;
             float mult = 1;
+            string raekke = string.Empty;
             {
                 while (true)
                 {
@@ -32,6 +33,11 @@ namespace basis_prog1
 
                     }
                     totalPoint = totalPoint - point;
+                    int karakter1 = tilfaelde.Next(0, 6);
+                    int karakter2 = tilfaelde.Next(0, 6);
+                    int karakter3 = tilfaelde.Next(0, 6);
+                    raekke = Convert.ToString((tegn[karakter1] +
+                            tegn[karakter2] + tegn[karakter3]));
                     Resultat();
 
                     Score();
@@ -48,12 +54,6 @@ namespace basis_prog1
 
             void Resultat()
             {
-                int karakter1 = tilfaelde.Next(0, 6);
-                int karakter2 = tilfaelde.Next(0, 6);
-                int karakter3 = tilfaelde.Next(0, 6);
-                string raekke = Convert.ToString((tegn[karakter1] +
-                                tegn[karakter2] + tegn[karakter3]));
-                Console.WriteLine(raekke);
                 
             }
 
