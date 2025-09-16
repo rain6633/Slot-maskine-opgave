@@ -18,8 +18,10 @@ namespace basis_prog1
           
             if (spil == "1")
             {
+                Console.Clear();
                 SlotMaskine();
             }
+            
         } 
         static void SlotMaskine()
         {
