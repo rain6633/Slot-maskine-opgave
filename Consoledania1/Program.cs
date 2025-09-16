@@ -15,14 +15,14 @@ namespace basis_prog1
             Console.WriteLine("spil 1: Den enarmede tyveknægt!");
             Console.WriteLine();
             string spil = Console.ReadLine();
-          
+
             if (spil == "1")
             {
                 Console.Clear();
                 SlotMaskine();
             }
-            
-        } 
+
+        }
         static void SlotMaskine()
         {
             Random tilfaelde = new Random(); //generere et tilfældigt tal
@@ -124,6 +124,44 @@ namespace basis_prog1
                 }
             }
         }
+        static void StenSaksPapir()
+        {
 
+
+            Console.WriteLine("Vælg: 1=Sten, 2=Saks, 3=Papir, q=Afslut");
+            while (true)
+            {
+                string input = Console.ReadLine();
+                Console.WriteLine("Du valgte: " + input);
+
+                Random rnd = new Random();
+                int computerChoice = rnd.Next(1, 4); // giver 1, 2 eller 3
+                Console.WriteLine("Computeren valgte: " + computerChoice);
+
+
+                int playerChoice = int.Parse(input);
+
+                if (playerChoice == computerChoice)
+                {
+                    Console.WriteLine("Uafgjort");
+
+                }
+                else if (playerChoice == 1 && computerChoice == 2)
+                {
+                    Console.WriteLine("Sten slår saks. Du vinder");
+
+                }
+                else if (playerChoice == 3 && computerChoice == 1)
+                {
+                    Console.WriteLine("Papir slår sten. Du vinder");
+                }
+                Console.WriteLine("Computeren vinder");
+                if (input == "q")
+                {
+                    break;
+                }
+            }
+
+        }
     }
 }
