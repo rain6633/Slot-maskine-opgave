@@ -10,24 +10,34 @@ namespace basis_prog1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("vælg dit spil!");
-            Console.WriteLine();
-            Console.WriteLine("spil 1: Den enarmede tyveknægt!");
-            Console.WriteLine("spil 2: Sten, saks, papir!");
-            Console.WriteLine();
-            Console.WriteLine("tryk 1 eller 2 for at starte dit spil");
-            string spil = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("vælg dit spil!");
+                Console.WriteLine();
+                Console.WriteLine("spil 1: Den enarmede tyveknægt!");
+                Console.WriteLine("spil 2: Sten, saks, papir!");
+                Console.WriteLine();
+                Console.WriteLine("tryk 1 eller 2 for at starte dit spil. eller q for at aflsutte");
+                string spil = Console.ReadLine();
 
-            if (spil == "1")
-            {
-                Console.Clear();
-                SlotMaskine();
+                if (spil == "1")
+                {
+                    Console.Clear();
+                    SlotMaskine();
+                }
+                else if (spil == "2")
+                {
+                    Console.Clear();
+                    StenSaksPapir();
+                }
+
+                if (spil == "q")
+                {
+                    break;
+                }
             }
-            else if (spil == "2")
-            {
-                Console.Clear();
-                StenSaksPapir();
-            }
+
+
 
         }
         static void SlotMaskine()
@@ -57,7 +67,7 @@ namespace basis_prog1
                     if (point > totalPoint)
                     {
                         Console.WriteLine($"du har ikke {point} point. så du " +
-                        $"better alle dine {totalPoint} point, fordi fuck Noah");
+                        $"better alle dine {totalPoint} point");
 
                         point = totalPoint;
 
