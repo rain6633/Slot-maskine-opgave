@@ -10,6 +10,7 @@ namespace basis_prog1
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("vælg dit spil!");
             Console.WriteLine();
             Console.WriteLine("spil 1: Den enarmede tyveknægt!");
