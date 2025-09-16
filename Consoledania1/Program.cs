@@ -13,13 +13,20 @@ namespace basis_prog1
             Console.WriteLine("vælg dit spil!");
             Console.WriteLine();
             Console.WriteLine("spil 1: Den enarmede tyveknægt!");
+            Console.WriteLine("spil 2: Sten, saks, papir!");
             Console.WriteLine();
+            Console.WriteLine("tryk 1 eller 2 for at starte dit spil");
             string spil = Console.ReadLine();
 
             if (spil == "1")
             {
                 Console.Clear();
                 SlotMaskine();
+            }
+            else if (spil == "2")
+            {
+                Console.Clear();
+                StenSaksPapir();
             }
 
         }
