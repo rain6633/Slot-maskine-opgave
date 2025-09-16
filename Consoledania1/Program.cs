@@ -38,7 +38,6 @@ namespace basis_prog1
             }
 
 
-
         }
         static void SlotMaskine()
         {
