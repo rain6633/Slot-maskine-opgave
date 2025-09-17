@@ -32,6 +32,11 @@ namespace basis_prog1
                     StenSaksPapir();
                 }
 
+                else if (spil == "3")
+                {
+                    Console.Clear();
+                    GætEtTal();
+                }
                 if (spil == "q")
                 {
                     break;
@@ -82,7 +87,7 @@ namespace basis_prog1
                     int karakter3 = tilfaelde.Next(0, 6);
 
                     //generere tre tilfældige tegn og udskriver dem
-                    for(int i=0; i < 10; i++)
+                    for (int i = 0; i < 10; i++)
                     {
                         karakter1 = tilfaelde.Next(0, 6);
                         Console.WriteLine($"{tegn[karakter1]}");
@@ -209,60 +214,53 @@ namespace basis_prog1
             }
 
         }
-    }
-}
-static void GætEtTal();
-{
-    Console.WriteLine("Gæt et tal");
-    String input= Console.ReadLine();
-    Console.WriteLine("Du skrev" + input);
-}
-int forsøg = 3;// 3 forsøg i alt
+        static void GætEtTal()
+        {
+            {
+                Console.WriteLine("Gæt et tal");
+                String input = Console.ReadLine();
+                Console.WriteLine("Du skrev" + input);
+            }
+            int forsøg = 3;// 3 forsøg i alt
 
-Random Random = new Random();// Generer tilfældige tal
-int Hemmeligt = Random.Next(1, 50); // tal fra 1 til 200
+            Random Random = new Random();// Generer tilfældige tal
+            int Hemmeligt = Random.Next(1, 50); // tal fra 1 til 200
 
+            while (true)
+            {
 
+                Console.WriteLine("Gæt et tal");// 
+                string input = Console.ReadLine();
+                Console.WriteLine("Du skrev " + input);
+                int gæt = int.Parse(input);
 
+                if ((gæt == Hemmeligt))// tjekker om det er for højt eller lavt
+                {
 
-while (true)
-{
+                    Console.WriteLine("Godt gæt. Korrekt");
+                }
+                else if (gæt > Hemmeligt)
+                {
+                    Console.WriteLine("For højt");
+                    forsøg--;
+                }
+                else if (gæt < Hemmeligt)
+                {
+                    Console.WriteLine("For lavt");
+                    forsøg--;
+                }
+                if (forsøg == 0)
+                {
+                    Console.WriteLine("Spillet er ovre");
+                }
 
-    Console.WriteLine("Gæt et tal");// 
-    string input = Console.ReadLine();
-    Console.WriteLine("Du skrev " + input);
-    int gæt = int.Parse(input);
-
-    if ((gæt == Hemmeligt))// tjekker om det er for højt eller lavt
-    {
-
-        Console.WriteLine("Godt gæt. Korrekt");
-    }
-    else if (gæt > Hemmeligt)
-    {
-        Console.WriteLine("For højt");
-        forsøg--;
-    }
-    else if (gæt < Hemmeligt)
-    {
-        Console.WriteLine("For lavt"):
-        forsøg--;
-    }
-       if (forsøg == 0)
-     {
-       Console.WriteLine("Spillet er ovre");
-     }
-
-   if (forsøg == 0)
-     {
-      Console.WriteLine("Alle forsøg opbrugt");
-     }
-  }
-
- }
+                if (forsøg == 0)
+                {
+                    Console.WriteLine("Alle forsøg opbrugt");
+                }
+            }
 
 
-     }
-        
+        }
     }
 }
