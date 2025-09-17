@@ -16,8 +16,9 @@ namespace basis_prog1
                 Console.WriteLine();
                 Console.WriteLine("spil 1: Den enarmede tyveknægt!");
                 Console.WriteLine("spil 2: Sten, saks, papir!");
+                Console.WriteLine("spil 3: Gæt et Tal!");
                 Console.WriteLine();
-                Console.WriteLine("tryk 1 eller 2 for at starte dit spil. eller q for at aflsutte");
+                Console.WriteLine("tryk 1,2 eller 3 for at starte dit spil. eller q for at aflsutte");
                 string spil = Console.ReadLine();
 
                 if (spil == "1")
@@ -180,5 +181,60 @@ namespace basis_prog1
             }
 
         }
+    }
+}
+static void GætEtTal();
+{
+    Console.WriteLine("Gæt et tal");
+    String input= Console.ReadLine();
+    Console.WriteLine("Du skrev" + input);
+}
+int forsøg = 3;// 3 forsøg i alt
+
+Random Random = new Random();// Generer tilfældige tal
+int Hemmeligt = Random.Next(1, 50); // tal fra 1 til 200
+
+
+
+
+while (true)
+{
+
+    Console.WriteLine("Gæt et tal");// 
+    string input = Console.ReadLine();
+    Console.WriteLine("Du skrev " + input);
+    int gæt = int.Parse(input);
+
+    if ((gæt == Hemmeligt))// tjekker om det er for højt eller lavt
+    {
+
+        Console.WriteLine("Godt gæt. Korrekt");
+    }
+    else if (gæt > Hemmeligt)
+    {
+        Console.WriteLine("For højt");
+        forsøg--;
+    }
+    else if (gæt < Hemmeligt)
+    {
+        Console.WriteLine("For lavt"):
+        forsøg--;
+    }
+       if (forsøg == 0)
+     {
+       Console.WriteLine("Spillet er ovre");
+     }
+
+   if (forsøg == 0)
+     {
+      Console.WriteLine("Alle forsøg opbrugt");
+     }
+  }
+
+ }
+
+
+     }
+        
     }
 }
