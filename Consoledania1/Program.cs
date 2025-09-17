@@ -256,7 +256,10 @@ namespace basis_prog1
 
                 if (forsøg == 0)
                 {
+                   Console.WriteLine("Spillet er ovre");
                     Console.WriteLine("Alle forsøg opbrugt");
+                    Console.WriteLine(" det rigtige tal var " + Hemmeligt);
+                   break;
                 }
             }
 
