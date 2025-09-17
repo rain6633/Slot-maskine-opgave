@@ -184,7 +184,6 @@ namespace basis_prog1
             while (true)
             {
                 string input = Console.ReadLine(); // Spillerens valg.
-                if(input == "q") break; // Afslut spillet.
                 Console.WriteLine("Du valgte: " + input);
 
                 Random rnd = new Random(); // Generer tilfældig tal
@@ -212,7 +211,7 @@ namespace basis_prog1
                 Console.WriteLine("Computeren vinder");
                 if (input == "q")
                 {
-                    break;
+                    break; // Afslut spillet.
                 }
             }
 
