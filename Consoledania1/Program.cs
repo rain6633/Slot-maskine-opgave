@@ -214,30 +214,23 @@ namespace basis_prog1
             }
 
         }
-        static void GætEtTal()
+               static void GætEtTal()
         {
-            {
-                Console.WriteLine("Gæt et tal");
-                String input = Console.ReadLine();
-                Console.WriteLine("Du skrev" + input);
-            }
-            int forsøg = 3;// 3 forsøg i alt
-
-            Random Random = new Random();// Generer tilfældige tal
-            int Hemmeligt = Random.Next(1, 50); // tal fra 1 til 200
+            int forsøg = 3; // Spilleren har 3 forsøg
+            Random Random = new Random(); // Generer tilfældige tal
+            int Hemmeligt = Random.Next(1, 50); // Gæt fra 1-50
 
             while (true)
             {
+                Console.WriteLine("Gæt et tal"); // flyttet ind i løkken
+                String input = Console.ReadLine();
+                Console.WriteLine(" Du skrev " + input);
+                int gæt = int.Parse(input); // læs nyt gæt hver gang
 
-                Console.WriteLine("Gæt et tal");// 
-                string input = Console.ReadLine();
-                Console.WriteLine("Du skrev " + input);
-                int gæt = int.Parse(input);
-
-                if ((gæt == Hemmeligt))// tjekker om det er for højt eller lavt
+                if (gæt == Hemmeligt) // tjekker om det er korrekt
                 {
-
                     Console.WriteLine("Godt gæt. Korrekt");
+                    break; // stop spillet
                 }
                 else if (gæt > Hemmeligt)
                 {
@@ -249,21 +242,16 @@ namespace basis_prog1
                     Console.WriteLine("For lavt");
                     forsøg--;
                 }
+
                 if (forsøg == 0)
                 {
                     Console.WriteLine("Spillet er ovre");
-                }
-
-                if (forsøg == 0)
-                {
-                   Console.WriteLine("Spillet er ovre");
                     Console.WriteLine("Alle forsøg opbrugt");
-                    Console.WriteLine(" det rigtige tal var " + Hemmeligt);
-                   break;
+                    Console.WriteLine("Det var det rigtige tal "+ Hemmeligt);
+                    break; // stop spillet
                 }
             }
-
-
         }
     }
 }
+
