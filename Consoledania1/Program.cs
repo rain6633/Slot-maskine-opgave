@@ -175,23 +175,26 @@ namespace basis_prog1
                 }
             }
         }
-        static void StenSaksPapir()
+     // Udvikler: Guled
+    static void StenSaksPapir()
         {
 
 
             Console.WriteLine("Vælg: 1=Sten, 2=Saks, 3=Papir, q=Afslut");
             while (true)
             {
-                string input = Console.ReadLine();
+                string input = Console.ReadLine(); // Spillerens valg.
+                if(input == "q") break; // Afslut spillet.
                 Console.WriteLine("Du valgte: " + input);
 
-                Random rnd = new Random();
+                Random rnd = new Random(); // Generer tilfældig tal
                 int computerChoice = rnd.Next(1, 4); // giver 1, 2 eller 3
                 Console.WriteLine("Computeren valgte: " + computerChoice);
 
 
-                int playerChoice = int.Parse(input);
-
+                int playerChoice = int.Parse(input); // Konventerer spillerens input til int
+                
+                 // Afgør resultatet
                 if (playerChoice == computerChoice)
                 {
                     Console.WriteLine("Uafgjort");
@@ -214,6 +217,7 @@ namespace basis_prog1
             }
 
         }
+            // Udvikler: Guled
                static void GætEtTal()
         {
             int forsøg = 3; // Spilleren har 3 forsøg
@@ -222,10 +226,10 @@ namespace basis_prog1
 
             while (true)
             {
-                Console.WriteLine("Gæt et tal"); // flyttet ind i løkken
+                Console.WriteLine("Gæt et tal"); // Spørg spiller
                 String input = Console.ReadLine();
                 Console.WriteLine(" Du skrev " + input);
-                int gæt = int.Parse(input); // læs nyt gæt hver gang
+                int gæt = int.Parse(input); // Konverter til int
 
                 if (gæt == Hemmeligt) // tjekker om det er korrekt
                 {
@@ -248,7 +252,7 @@ namespace basis_prog1
                     Console.WriteLine("Spillet er ovre");
                     Console.WriteLine("Alle forsøg opbrugt");
                     Console.WriteLine("Det var det rigtige tal "+ Hemmeligt);
-                    break; // stop spillet
+                    break; // afslut spillet
                 }
             }
         }
