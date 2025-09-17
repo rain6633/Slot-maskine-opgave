@@ -74,10 +74,38 @@ namespace basis_prog1
                     //trækker hvor mange point du satser fra dine total point
                     totalPoint = totalPoint - point;
 
-                    //generere tre tilfældige tegn og udskriver dem
                     int karakter1 = tilfaelde.Next(0, 6);
+
                     int karakter2 = tilfaelde.Next(0, 6);
+
                     int karakter3 = tilfaelde.Next(0, 6);
+
+                    //generere tre tilfældige tegn og udskriver dem
+                    for(int i=0; i < 10; i++)
+                    {
+                        karakter1 = tilfaelde.Next(0, 6);
+                        Console.WriteLine($"{tegn[karakter1]}");
+                        System.Threading.Thread.Sleep(250);
+                        Console.Clear();
+                    }
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        karakter2 = tilfaelde.Next(0, 6);
+                        Console.WriteLine($"{tegn[karakter1]}{tegn[karakter2]}");
+                        System.Threading.Thread.Sleep(250);
+                        Console.Clear();
+                    }
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        karakter3 = tilfaelde.Next(0, 6);
+                        Console.WriteLine($"{tegn[karakter1]}{tegn[karakter2]}{tegn[karakter3]}");
+                        System.Threading.Thread.Sleep(250);
+                        Console.Clear();
+                    }
+
+
                     raekke = Convert.ToString((tegn[karakter1] +
                             tegn[karakter2] + tegn[karakter3]));
 
@@ -134,6 +162,7 @@ namespace basis_prog1
                         }
                         else
                         {
+                            Console.Clear();
                             break; //slutter spillet
                         }
                     }
